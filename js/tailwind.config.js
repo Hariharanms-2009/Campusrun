@@ -1,0 +1,2 @@
+// Tailwind CDN config: remap indigo/violet to the active colour theme (CSS variables set in css/themes.css)
+tailwind.config={theme:{extend:{colors:{indigo:{200:'rgb(var(--p2)/<alpha-value>)',300:'rgb(var(--p3)/<alpha-value>)',400:'rgb(var(--p4)/<alpha-value>)',500:'rgb(var(--p5)/<alpha-value>)',600:'rgb(var(--p6)/<alpha-value>)'},violet:{500:'rgb(var(--t5)/<alpha-value>)',600:'rgb(var(--t6)/<alpha-value>)'}}}}};

@@ -1,0 +1,25 @@
+/* Base styles, animations and utilities */
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html,body,#root{height:100%;margin:0}
+body{background:var(--bg);color:#e8ecf5;font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;background-image:radial-gradient(700px 400px at 12% -5%,rgb(var(--p5)/.22),transparent),radial-gradient(600px 400px at 100% 100%,rgb(var(--t5)/.14),transparent);background-attachment:fixed}
+.rad{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:2px solid rgb(var(--p5));animation:rad 2.6s ease-out infinite}
+@keyframes rad{0%{width:24px;height:24px;opacity:.9}100%{width:360px;height:360px;opacity:0}}
+.pulse::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid #f59e0b;animation:pl 1.8s ease-out infinite}
+@keyframes pl{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.7);opacity:0}}
+.pop{animation:pop .3s ease-out}
+@keyframes pop{from{transform:translateY(10px);opacity:0}to{transform:none;opacity:1}}
+.dot{animation:bn 1s infinite}
+.dot:nth-child(2){animation-delay:.15s}
+.dot:nth-child(3){animation-delay:.3s}
+@keyframes bn{50%{transform:translateY(-3px);opacity:.4}}
+.wall{background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:18px 18px}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:36px 36px}
+@media (prefers-reduced-motion:reduce){.rad,.pulse::after,.pop,.dot{animation:none}}
+input[type=range]{accent-color:rgb(var(--p5))}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.mq{animation:mq 30s linear infinite}
+.fl{animation:fl 4s ease-in-out infinite}
+html[data-motion=off] *{animation:none!important;transition:none!important}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-thumb{background:#ffffff22;border-radius:9px}
